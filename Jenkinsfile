@@ -24,7 +24,7 @@ pipeline {
 
     stage('test') {
       steps {
-        dir('frontend') {
+        dir('./') {
           sh 'npm run test'
         }
       }
@@ -32,7 +32,7 @@ pipeline {
 
     stage('build') {
       steps {
-        dir('frontend') {
+        dir('./') {
           script {
             try {
               sh 'docker stop ${container_name}'
