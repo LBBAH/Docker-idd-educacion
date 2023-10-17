@@ -1,0 +1,53 @@
+<div class="container">
+  <header class="py-3 border-bottom">
+      <div class="container d-flex flex-wrap justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+          <nav class="d-flex">
+            <h6 class="mb-0">
+              <a href="" class="text-reset">Home</a>
+              <span>/</span>
+              <a href="" class="text-reset">Quienes Somos</a>           
+            </h6>
+          </nav>
+        </a>
+        <!--<app-search></app-search>-->
+      </div>
+  </header>
+
+
+  <div data-aos="flip-down" (dblclick)="eventoDoble()">
+  <h1 class="text-center text-primary p-4 md-3" >¿Qué es IDD EDUCATION?</h1>
+  <p class="fs-5 col-md-12 p-4 md-3">IDD EDUCATION es un software que ofrece informacion general acerca de la discapacidad intelectual con el fin de apoyar a los maestros,padres de familia u/o personas 
+      interesadas en el tema con el fin de apoyar a niños y jovenes en el desarrollo de su enseñanza con materiales didacticos 
+      (videos educaticos,videos con historias o experiencias de padres de familia ,videos didacticos , plataformas educativas,software educativo).</p><br>
+  <img src="../assets/img/que_es.png"  class="rounded mx-auto d-block" width="400" height="300">
+   </div>
+
+  <hr class="col-3 col-md-2 mb-5">
+
+  <div class="row g-5 p-4 md-3" data-aos="flip-up">
+      <div class="col-md-6" (mousemove)="eventoMousemove()">
+          <h2 class="text-center text-primary">Misión</h2>
+          <p>Mejorar la calidad de vida de las personas con discapacidad intelectual Aplicando programas psicopedagógicos con enfoque metodológico, de forma individual y por grupo a los alumnos.
+              Contribuir por medio de actividades lúdicas, cotidianas, cognitivas y de recreación en el desarrollo de capacidades y habilidades de los alumnos.
+              Involucrar y, apoyar a los padres de Familia de forma emocional y en el desarrollo integral de sus hijos.
+              Crear continuamente vinculación con Instituciones Educativas.
+              </p>
+              <img class="rounded mx-auto d-block" src="../assets/img/mision.jpg" width="300" height="180">
+      </div>
+
+      <div class="col-md-6" (contextmenu)="eventoContextMenu()">
+          <h2 class="text-center text-primary">Visión</h2>
+          <p>Promover la profesionalización docente a través de la reflexión y el análisis de diversas situaciones educativas con los estudiantes con una discapacidad intelectual y ser una organización reconocida a nivel estatal.<br></p>
+              <ul>
+                  <li>Atender la situación educativa de alumnos con discapacidad mediante el uso de las TIC brindando recursos y herramientas de enseñanza a los docentes con la finalidad de dar cumplimiento al derecho de una educación inclusiva y de calidad en el ámbito público como privado.</li>
+                  <li>Crear material educativo de calidad para implementar en los niveles de educación con objeto de enriquecer las habilidades cognitivas.</li>
+                  <li>Crear un conjunto de técnicas con el propósito de transmitir la enseñanza a los estudiantes y así enriquecer el aprendizaje de los educandos.</li>
+              </ul>
+              <img class="rounded mx-auto d-block" src="../assets/img/vision.jpg" width="300" height="180">
+      </div>
+  </div>
+</div>
+
+
+<app-footer data-aos="flip-right"></app-footer>

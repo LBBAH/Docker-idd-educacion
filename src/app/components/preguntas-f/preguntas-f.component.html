@@ -1,0 +1,157 @@
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="../inicio">Home</a></li>
+      <li class="breadcrumb-item active" routerLink="../preguntasf" aria-current="page">Preguntas Frecuentes</li>
+    </ol>
+  </nav><br>
+  
+  <h3>Preguntas frecuentes</h3><br>
+  <div>
+      <mat-accordion class="example-headers-align">
+  
+          <mat-accordion class="example-headers-align">
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="titulo">
+                     Discapacidad Intelectual
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    IDD EDUCATION
+                    <mat-icon class="icon">emoji_objects</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                
+                <mat-accordion>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title class="titulo">
+                          ¿Qué es la discapacidad intelectual y las discapacidades del desarrollo?
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Toca para ver la respuesta
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Es una discapacidad caracterizada por limitaciones significativas en el funcionamiento intelectual y en la conducta adaptativa que se manifiesta en habilidades adaptativas conceptuales, sociales, y prácticas".
+                      La limitaciones a que hace referencia la definición se expresan principalmente en las habilidades que la persona aprende para funcionar en su vida diaria y que le permiten responder en distintas situaciones y en contextos diferentes.
+                      La discapacidad intelectual se expresa cuando una persona con limitaciones significativas interactúa con el entorno. Así, la discapacidad depende tanto de la propia persona como de las barreras u obstáculos que tiene el entorno. Según sea un entorno más o menos accesible, la discapacidad se expresará de manera diferente
+                      A las personas con discapacidad intelectual les cuesta más que a los demás aprender, comprender y comunicarse. Es importante remarcar que la discapacidad intelectual NO ES una enfermedad mental.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                       (closed)="panelOpenState = false">
+                    
+                  </mat-expansion-panel>
+                </mat-accordion><br>
+  
+                <mat-accordion>
+                  <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title class="titulo">
+                          ¿Cuáles son las causas de la discapacidad intelectual?
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Toca para ver la respuesta
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Hay cuatro categorías de factores que pueden darse antes, durante o después del nacimiento de un niño. Se trata de:<br>
+                      Trastornos genéticos: (como el síndrome de X Frágil, la fenilcetonuria, el síndrome de Lesch-Nyhan) son transmitidos al niño a través de los genes en el momento de la concepción.<br>
+                      Trastornos cromosómicos: suceden durante el proceso de disposición de los cromosomas. Los más frecuentes son el síndrome de Down, el síndrome de Prader-Willi y el síndrome de Angelman.<br>
+                      Causas biológicas y orgánicas: aparecen antes, durante o después del nacimiento. Las principales causas prenatales son el sarampión y la rubeola durante el embarazo, el consumo de toxinas o de ciertos medicamentos. En cuanto a los factores perinatales (durante el alumbramiento), cabe destacar la exposición a toxinas o infecciones (por ejemplo el herpes genital), la presión excesiva en la cabeza o la asfixia. Por último, pueden darse algunas causas postnatales como un traumatismo craneano o una meningitis.<br>
+                      Causas ambientales: por ejemplo, carencias alimenticias de la madre durante el embarazo, el consumo de drogas o alcohol, la falta de estimulación física y sensorial y la carencia de atención sanitaria.</p>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                       (closed)="panelOpenState = false">
+                    
+                  </mat-expansion-panel>
+                </mat-accordion>
+                
+                <mat-form-field appearance="fill">
+                  <mat-label>Tengo otra pregunta</mat-label>
+                  <input matInput>
+                </mat-form-field>
+      
+                <button mat-raised-button class="boton-e">Enviar</button>
+            
+              </mat-expansion-panel>          
+        
+        </mat-accordion>
+        <br>
+  
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="titulo">
+                 Discapacidad Auditiva
+              </mat-panel-title>
+              <mat-panel-description>
+                IDD EDUCATION
+                <mat-icon class="mat-icon-lg">hearing</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            
+            <mat-accordion>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="titulo">
+                      ¿Cómo interactuar con una persona sorda o con discapacidad auditiva?
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Toca para ver la respuesta
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>
+                  Una persona sorda puede comunicarse de diferentes maneras. Si vas a comunicarte con ella, tratá de no hacerla sentir incómoda o que le genere algún malestar, dado que son muy intuitivas y expertas en leer rostros o conductas corporales.<br>
+                  Lo ideal es preguntarle a ella cómo prefiere comunicarse, ya que puede ser usuaria de la lengua de señas, puede o no hacer uso de la lectura labial, puede usar el español escrito, o incluso puede no conocer la lengua de señas, ni el español.
+                </p>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+                
+              </mat-expansion-panel>
+            </mat-accordion><br>
+  
+            <mat-accordion>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="titulo">
+                      ¿Cómo comunicarse si la persona sorda no sabe lenguaje de señas ni español?
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Toca para ver la respuesta
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>Puede que algunas personas sordas hayan crecido sin contacto con otras personas sordas y por lo tanto, no tuvieron la oportunidad de aprender la Lengua de Señas, ellas han utilizado los recursos a su alcance para comunicarse con quienes le rodeaban. Generalmente interactúan con gestos naturales o algunas palabras sueltas.<br>
+  
+                  En este caso:<br>
+                  
+                  Utilizá gestos naturales para expresar tu mensaje.<br>
+                  Las imágenes a tu alrededor son indicadores que le ayudarán a comprender tu mensaje, incluso podés dibujarle.<br>
+                  Si necesitás indicarle un lugar, nada mejor que acompañarlo hacia ese lugar.<br>
+                  En algunas situaciones, es indispensable acudir a un mediador sordo lingüístico-intercultural</p>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+                
+              </mat-expansion-panel>
+            </mat-accordion><br>
+            
+            <mat-form-field appearance="fill">
+              <mat-label>Tengo otra pregunta</mat-label>
+              <input matInput>
+            </mat-form-field>
+  
+            <button mat-raised-button class="boton-e">Enviar</button>
+        
+          </mat-expansion-panel>
+      
+  
+  
+    </mat-accordion>
+     </mat-accordion>
+  </div>
+  
+  
+  
+</div>
+
+<app-footer data-aos="flip-right"></app-footer>

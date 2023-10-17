@@ -1,0 +1,94 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+#navbar{
+    width: 100%;
+    height: 28px;
+    background-color: rgb(246, 246, 246);
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size:smaller;
+}
+
+.navbarDiv{
+    align-self: center;
+    margin: 15px;
+}
+
+.links{
+    text-decoration: none;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.returnHome{
+    border: none;
+    background-color:white;
+    border-radius: 4px;
+}
+
+.imput-search{
+    border: none;
+    background: none;
+    outline: none;    
+}
+
+.button-search{
+    border: none;
+    background: none;
+    outline: none;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.navbar-menu{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#navbar-Responsive{
+    background-color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
+    height: 100vh; 
+    width:50%; 
+    display: none;
+}
+
+.menu-icon{
+    padding: 20px; display: none;
+}
+
+
+#navbar-Responsive-menu ul a{
+    text-decoration: none;
+    font-size: 20px;
+    margin: 6px;
+}
+
+#searchResponse{
+    display:none
+}
+
+@media only screen and (max-width: 1000px) {
+    #navbar{
+        display: none;
+    }
+    .navbar-menu{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #navbar-Responsive{
+        display: none;        
+        position: fixed;
+        height: 100%;
+        top: 0%;
+        z-index: 100;
+    }
+    #searchResponse{
+        display:block
+    }
+   
+}

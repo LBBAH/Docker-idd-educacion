@@ -1,0 +1,58 @@
+<form class="p-3" [formGroup]="formNewCurso">
+
+  
+    
+  <div class="form-floating input-group-prepend" style="padding-bottom: 15px;">
+    <input type="text" formControlName="name" class="form-control" placeholder="Nombre Completo">
+    <label for="floatingInput">Nombre curso</label>
+  </div>   
+  <div *ngIf=" name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger pb-4">
+    <div *ngIf="name?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="name?.errors?.['maxlength']">Tamaño maximo revasado</div>
+    <div *ngIf="name?.errors?.['pattern']">No introducir caracteres especiales</div>
+  </div>
+
+
+  <div class="form-floating input-group-prepend" style="padding-bottom: 15px;">
+    <input type="text" formControlName="Descripcion" class="form-control" placeholder="Nombre Completo">
+    <label for="floatingInput">Decripcion</label>
+  </div>   
+  <div *ngIf=" Descripcion?.invalid && (Descripcion?.dirty || Descripcion?.touched)" class="alert alert-danger">
+    <div *ngIf="Descripcion?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="Descripcion?.errors?.['maxlength']">Tamaño maximo revasado</div>
+    <div *ngIf="Descripcion?.errors?.['pattern']">No introducir caracteres especiales</div>
+  </div>
+
+
+  <label class="w-100">Tipo:</label>
+  <select  formControlName="tipo"  class="form-control" style="padding-bottom: 15px;">              
+    <option value="gratis">Gratis</option>
+    <option value="paga">Paga</option>
+  </select>  
+  <div *ngIf=" tipo?.invalid && (tipo?.dirty || tipo?.touched)" class="alert alert-danger">
+    <div *ngIf="tipo?.errors?.['required']">Campo requerido</div>
+  </div>
+
+  <div class="form-floating input-group-prepend" style="padding-bottom: 15px;">
+    <input type="text" formControlName="precio" class="form-control" placeholder="Precio (Si es gratis marcar como 0)">
+    <label for="floatingInput">Precio (Si es gratis marcar como 0)</label>
+  </div>   
+  <div *ngIf=" precio?.invalid && (precio?.dirty || precio?.touched)" class="alert alert-danger">
+    <div *ngIf="precio?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="precio?.errors?.['pattern']">No introducir caracteres especiales</div>
+  </div>
+
+   
+    <label class="w-100">Selecciona tipo de curso:</label>
+    <select  formControlName="tipyRec"  class="form-control" style="padding-bottom: 15px;">
+      <option *ngFor="let item of typerECURSO" value="{{item.id}}">{{item.name}}</option>
+    </select> 
+    <div *ngIf=" tipyRec?.invalid && (tipyRec?.dirty || tipyRec?.touched)" class="alert alert-danger">
+      <div *ngIf="tipyRec?.errors?.['required']">Campo requerido</div>
+    </div>
+
+    <div>
+      <button class="btn btn-danger" (click)="closeDialog()">Cerrar</button>
+      <button class="btn btn-info" (click)="registraRol()">Registrar</button>
+    </div>
+</form>

@@ -1,0 +1,77 @@
+<header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <div class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <nav class="d-flex">
+          <h6 class="mb-0">
+            <a [routerLink]="['/home']" class="text-reset">Home</a>
+            <span>/</span>
+            <a href="" class="text-reset">Chat</a>           
+          </h6>
+        </nav>
+      </div>
+      <!--<app-search></app-search>-->
+    </div>
+</header>
+
+<section style="padding-top: 10px;">
+    <div class="container ">
+    
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+    
+            <div class="card" id="chat2">
+                <div class="card-header d-flex justify-content-between align-items-center p-3">
+                    <h5 class="mb-0">Chat</h5>
+                    
+                    </div>
+                <div class="card-body" data-mdb-scrollbar="true" style="position: relative; height: 400px">
+    
+                    <div class="d-flex flex-row justify-content-start">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: 100%;">
+                        <div>
+                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Hola</p>
+                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Como estan ...???
+                        </p>
+                        <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Tengo una duda, podrian ayudarme?</p>
+                        <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
+                        </div>
+                    </div>
+        
+                    <div class="divider d-flex align-items-center mb-4">
+                        <p class="text-center mx-3 mb-0" style="color: #a2aab7;">Today</p>
+                    </div>
+        
+                    <div class="d-flex flex-row justify-content-end mb-4 pt-1">
+                        <div>
+                        <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Hola!!! claro</p>
+                        <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Que necesitas??</p>
+                        
+                        <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
+                        </div>
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: 100%;">
+                    </div>
+
+                    <div *ngIf="message?.invalid && (message?.dirty || message?.touched )" class="alert alert-danger">
+                        <div *ngIf="message?.errors?.['required']">Debe escribir un mensaje para enviar</div>                        
+                    </div>
+                </div>
+                <form [formGroup]="formChat" (ngSubmit)="seendMessage()" class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                        alt="avatar 3" style="width: 40px; height: 100%;">
+                    <input type="text" formControlName="message" class="form-control form-control-lg" id="exampleFormControlInput1"
+                        placeholder="Type message">
+                    <a class="ms-1 text-muted" href="#!"><i class="bi bi-paperclip"></i></a>
+                    <a class="ms-3 text-muted" href="#!"><i class="bi bi-emoji-smile-fill"></i></a>
+                    <button class="ms-3" type="submint" href="#!"><i class="bi bi-send"></i></button>
+                </form>
+            </div>
+    
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+<app-footer data-aos="flip-right"></app-footer>

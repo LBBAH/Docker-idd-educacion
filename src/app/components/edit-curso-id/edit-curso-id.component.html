@@ -1,0 +1,104 @@
+<section class="container" style="text-align: center;">
+  <h1>Editar Curso</h1>
+</section>
+<section class="container">
+
+  <div style="margin:20px">
+    <h2>Vista previa de curso</h2>
+  </div>
+  <div style="display: flex;">
+    <div [style.background-image]="'url(' + (editCurso.vistaprevia === '' ? 'http://127.0.0.1:8000/img/imgVistaRecursos/Vista previa.png' : 'http://127.0.0.1:8000/img/imgVistaRecursos/' + editCurso.vistaprevia) + ')'" style="background-size: 100% 100%;width: 50%; height: 300px;">        
+    </div>
+    <div style="padding: 20px; width: 50%;">    
+      <form enctype="multipart/form-data" [formGroup]="formNewimg" >
+        <input class="imgImput" type="file" formControlName="file" id="file"  (change)="imagenUp($event)" accept=".png"/>
+          <label class="labelimgUser" for="file">Cargar vista previa.png</label>
+          <button class="buttonImgUser" (click)="imagensXD()">Cambiar foto</button>
+      </form>
+    </div>
+  </div>
+
+  <div style="margin:20px">
+    <h2>Datos generales</h2>
+  </div>
+  <div style="display: flex;">       
+    <div style="padding: 20px; width: 100%;">    
+      <form class="p-3" [formGroup]="datosCursosUpdate" >
+
+        <div class="form-floating" class="marginLabels">
+          <label for="floatingInput">Nombre</label>
+          <input type="text" formControlName="name" class="form-control" placeholder="Email">        
+        </div>
+        <div *ngIf=" name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger pb-4">
+          <div *ngIf="name?.errors?.['required']">Campo requerido</div>
+          <div *ngIf="name?.errors?.['maxlength']">Tamaño maximo revasado</div>
+          <div *ngIf="name?.errors?.['pattern']">No introducir caracteres especiales</div>
+        </div>
+
+        <div class="form-floating" class="marginLabels">
+          <label for="floatingInput">Descripcion</label>
+          <input type="text" formControlName="Descripcion" class="form-control" placeholder="Email">        
+        </div>
+        <div *ngIf=" Descripcion?.invalid && (Descripcion?.dirty || Descripcion?.touched)" class="alert alert-danger">
+          <div *ngIf="Descripcion?.errors?.['required']">Campo requerido</div>
+          <div *ngIf="Descripcion?.errors?.['maxlength']">Tamaño maximo revasado</div>
+          <div *ngIf="Descripcion?.errors?.['pattern']">No introducir caracteres especiales</div>
+        </div>
+        
+        <div class="marginLabels">
+          <label class="w-100">Tipo(Si es gratis marcar el precio como 0):</label>
+          <select  formControlName="tipo"  class="form-control" style="padding-bottom: 15px;">              
+            <option value="gratis">Gratis</option>
+            <option value="paga">Paga</option>
+          </select>  
+          <div *ngIf=" tipo?.invalid && (tipo?.dirty || tipo?.touched)" class="alert alert-danger">
+            <div *ngIf="tipo?.errors?.['required']">Campo requerido</div>
+          </div>
+        </div>
+
+        <div class="form-floating" class="marginLabels">
+          <label for="floatingInput">precio</label>
+          <input type="text" formControlName="precio" class="form-control" placeholder="Email">        
+        </div>
+        <div *ngIf=" precio?.invalid && (precio?.dirty || precio?.touched)" class="alert alert-danger">
+          <div *ngIf="precio?.errors?.['required']">Campo requerido</div>
+          <div *ngIf="precio?.errors?.['pattern']">No introducir caracteres especiales</div>
+        </div>
+
+        <div class="marginLabels">
+          <label class="w-100">Selecciona tipo de curso:</label>
+          <select  formControlName="tipyRec"  class="form-control" style="padding-bottom: 15px;">
+            <option *ngFor="let item of typerECURSO" value="{{item.id}}">{{item.name}}</option>
+          </select> 
+          <div *ngIf=" tipyRec?.invalid && (tipyRec?.dirty || tipyRec?.touched)" class="alert alert-danger">
+            <div *ngIf="tipyRec?.errors?.['required']">Campo requerido</div>
+          </div>
+        </div>
+
+        <div style="width: 100%; text-align: end;" class="marginLabels">
+          <button class="btn btn-info" (click)="actualizarDatos()">Actualizar datos</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div style="margin:20px">
+    <h2>Secciones de curso</h2>
+  </div>
+  <div style="max-width: 100%; text-align: end;">
+    <button type="button" class="btn btn-secondary">Nueva seccion</button>    
+  </div>
+  <div style="display: block;" class="container">
+   <div style="max-width: 100%; padding-bottom: 10px;" *ngFor="let seccion of seccions" >
+      <h4>Tema: {{seccion.nombre}}</h4>            
+      <p>Descrpcion: {{seccion.descripcion}}</p>      
+      <p>Url: {{seccion.url}}</p>
+      <div style="max-width: 100%; text-align: end;">
+        <button type="button" class="btn btn-primary">Editar</button>
+        <button type="button" class="btn btn-warning">Borrar</button>
+      </div>
+   </div>
+  </div>
+</section>
+  <app-footer></app-footer>

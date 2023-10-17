@@ -1,0 +1,143 @@
+<header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <nav class="d-flex">
+          <h6 class="mb-0">
+            <a [routerLink]="['/home']" class="text-reset">Home</a>
+            <span>/</span>
+            <a href="" class="text-reset">Registro</a>           
+          </h6>
+        </nav>
+      </a>
+      <!--<app-search></app-search>-->
+    </div>
+</header>
+
+<div class="rounded d-flex justify-content-center" style="padding-top:10px">
+    <div class="col-md-7 col-sm-12 p-5 border">
+        <div class="text-center">
+            <h3 class="text-primary">Crear Cuenta</h3>
+        </div>
+        <div class="p-8">
+            <form [formGroup]="formUser" (ngSubmit)="registrarUsuario()" >
+                <div class="input-group mb-3" >
+                    <span class="input-group-text " style="background-color: #3f51b5;">
+                        <i class="bi bi-person-plus-fill text-white"></i>
+                    </span>
+                    <div class="form-floating input-group-prepend">
+                        <input type="text" formControlName="name" class="form-control" placeholder="Nombre Completo">
+                        <label for="floatingInput">Nombre Completo</label>
+                    </div>   
+                </div>
+                <div *ngIf=" _name?.invalid && (_name?.dirty || _name?.touched)" class="alert alert-danger">
+                    <div *ngIf="_name?.errors?.['required']">Campo requerido</div>
+                    <div *ngIf="_name?.errors?.['maxlength']">Tamaño maximo revasado</div>
+                    <div *ngIf="_name?.errors?.['pattern']">No introducir caracteres especiales</div>
+                </div>
+                
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" style="background-color: #3f51b5;">
+                        <i class="bi bi-person-plus-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="text" formControlName="nameUser" class="form-control" placeholder="Nombre usuario">
+                        <label for="floatingInput">Nombre usuario</label>
+                    </div>                    
+                </div>  
+                <div *ngIf="nameUser?.invalid && (nameUser?.dirty || nameUser?.touched )" class="alert alert-danger">
+                    <div *ngIf="nameUser?.errors?.['required']">Campo requerido</div>
+                    <div *ngIf="nameUser?.errors?.['maxlength']">Tamaño maximo 15 caracteres</div>
+                    <div *ngIf="nameUser?.errors?.['pattern']">No introducir caracteres especiales ni espacios</div>
+                </div>
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" style="background-color: #3f51b5;">
+                        <i class="bi bi-telephone-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="tel" formControlName="phone" class="form-control" placeholder="Telefono">
+                        <label for="floatingInput">Telefono</label>
+                    </div>                    
+                </div>  
+                <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched )" class="alert alert-danger">
+                    <div *ngIf="phone?.errors?.['required']">Campo requerido</div>
+                    <div *ngIf="phone?.errors?.['maxlength']">Tamaño maximo de 10 caracteres</div>
+                    <div *ngIf="phone?.errors?.['pattern']">Solo Numeros</div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" style="background-color: #3f51b5;">
+                        <i class="bi bi-envelope-fill text-white"></i>                        
+                    </span>
+                    <div class="form-floating">
+                        <input type="email" formControlName="email" class="form-control" placeholder="Email">
+                        <label for="floatingInput">Email</label>
+                    </div>                    
+                </div>  
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched )" class="alert alert-danger">
+                    <div *ngIf="email?.errors?.['required']">Campo requerido</div>
+                    <div *ngIf="email?.errors?.['pattern']">Error sitaxis</div>
+                    <div *ngIf="email?.errors?.['maxlength']">Error sitaxis</div>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text " style="background-color: #3f51b5;">
+                        <i class="bi bi-key-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="password" formControlName="password" class="form-control" placeholder="Contraseña">
+                        <label for="floatingInput">Contraseña</label>
+                    </div>                    
+                </div>
+                <div *ngIf="password?.invalid && (password?.dirty || password?.touched )" class="alert alert-danger">
+                    <div *ngIf="password?.errors?.['required']">Campo requerido</div>
+                    <div *ngIf="password?.errors?.['minlength']">Tamaño minimo 8</div>
+                    <div *ngIf="password?.errors?.['maxlength']">Caracteres maximo revado</div>
+                    <div *ngIf="password?.errors?.['pattern']">Mayusculas y minusculas</div>
+                    <div *ngIf="password?.errors?.['pattern']">Numeros y caracteres especiales</div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" style="background-color: #3f51b5;">
+                        <i class="bi bi-key-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="password" formControlName="confirmpassword" class="form-control" placeholder="Confirmar Contraseña">
+                        <label for="floatingInput">Confirmar Contraseña</label>
+                    </div>                    
+                </div>
+                <div *ngIf="confirmpassword?.invalid && (confirmpassword?.dirty || confirmpassword?.touched )" class="alert alert-danger">
+                    <div *ngIf="confirmpassword?.errors?.['required'] ">Campo requerido</div>
+                    
+                    <div *ngIf="confirmpassword?.errors?.['mustMatch']">Las contraseñas no coinciden</div>
+                </div>
+                
+                
+
+                <div class="d-grid col-6 mx-auto">
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" formControlName="confirmAP" class="form-check-input" id="check1" checked/>                        
+                        <label class="form-check-label" for="check1">Acepto Aviso de privasidad</label>
+                    </div>
+                </div>
+                <div *ngIf="confirmAP?.invalid && (confirmAP?.dirty || confirmAP?.touched )" class="alert alert-danger">
+                    <div *ngIf="confirmAP?.errors?.['required']">
+                        Debe aceptar los terminos y condisiones para continuar
+                    </div>                    
+                </div>
+                
+
+                <div class="d-grid col-6 mx-auto">
+                    <button mat-raised-button color="primary" type="submit"><span></span> Registrarse</button>
+                </div>
+                <p class="text-center mt-3">¿Ya estas registrado?
+                    <a [routerLink]="['/login']">Inicia sesion</a>
+                </p>
+            </form> 
+        </div>
+    </div>
+</div>
+
+<app-footer data-aos="flip-right"></app-footer>

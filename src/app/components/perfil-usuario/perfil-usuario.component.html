@@ -1,0 +1,176 @@
+<section *ngIf="perfilimagenesUsuario">
+  <div [style.background-image]="'url(' + (imagenesPerfil.background_user === '' ? 'http://127.0.0.1:8000/img/1325372.png' : 'http://127.0.0.1:8000/img/imgBackGroundUser/' + imagenesPerfil.background_user) + ')'"  class="backgroundIMGuser">
+    <img [src]="imagenesPerfil.perfil_user == ''? 'https://educacionespecialmx.site/imgAppWeb/userimage.png' : 'http://127.0.0.1:8000/img/imgUser/' + imagenesPerfil.perfil_user" alt="" class="imgPerfil">
+    <div class="namePerfil">
+      <b>
+        {{user.name}}        
+      </b>      
+    </div>
+  </div>
+</section>
+
+<section *ngIf="perfilSinimagenesUsuario">
+  <div  class="NobackgroundIMGuser">      
+    <img src="https://educacionespecialmx.site/imgAppWeb/userimage.png" alt="" class="NoimgPerfil">
+    <div class="namePerfil">
+      <b >
+        {{user.name}}        
+      </b>      
+    </div>
+  </div>
+</section>
+
+
+
+<section id="sectionInfoUser">
+  <div id="optionsResponsiveScreen" class="container">
+    <div class="row">
+      <div class="lista-opcionesUsuario" class="col" (click)="showOrNone(1)">
+        Mis Datos
+      </div>
+      <div class="lista-opcionesUsuario" class="col" (click)="showOrNone(2)">
+        Cursos Creados 
+      </div>
+      <div class="lista-opcionesUsuario" class="col" (click)="showOrNone(3)">
+        Mis cursos
+      </div>
+    </div>
+  </div>
+  
+  <div id="optionsFullscren">
+    <ul style="list-style: none; width: 100%;">
+      <li class="lista-opcionesUsuario" (click)="showOrNone(1)">
+        Mis Datos
+      </li>
+      <li class="lista-opcionesUsuario" (click)="showOrNone(2)">
+        Cursos Creados        
+      </li>     
+      <li class="lista-opcionesUsuario" (click)="showOrNone(3)">
+        Mis cursos
+      </li>     
+    </ul>
+  </div>
+
+  <div class="datosUsuario">
+
+    <div id="data-user-changue">
+      <h1 style=" padding-bottom: 20px;">Mis datos</h1>
+      
+      <div style="padding-bottom: 9px; padding-top: 20px ;border-bottom: 1px solid rgb(139, 139, 139); width: 100%; display:flex">
+        <div class="datosUsarioCambiaodos">
+          Foto de perfil
+        </div>
+        <div class="datosUsarioCambiaodos" style="text-align: end;">
+          <a class="cambiar-datos" (click)="userImgProfile(user.id)">Cambiar foto de perfil</a>
+        </div>        
+      </div>
+      <div style="padding-bottom: 9px; padding-top: 20px ;border-bottom: 1px solid rgb(139, 139, 139); width: 100%; display:flex">
+        <div class="datosUsarioCambiaodos">
+          Foto de portada
+        </div>
+        <div class="datosUsarioCambiaodos" style="text-align: end;">
+          <a class="cambiar-datos" (click)="userImgBackground(user.id)">Cambiar foto de portada</a>
+        </div>        
+      </div>
+      <div style="padding-bottom: 9px; padding-top: 20px ;border-bottom: 1px solid rgb(139, 139, 139); width: 100%; display:flex">
+        <div class="datosUsarioCambiaodos">
+          Detalles
+          <ul>
+            <li>Nombre: <b>{{user.name}}</b>  </li>
+            <li>Nombre Usuario: <b>{{user.nameUser}}</b> </li>
+            <li>Telefono: <b>{{user.phone}}</b> </li>
+            <li>Correo: <b>{{user.email}}</b>  </li>
+          </ul>
+        </div>
+        <div class="datosUsarioCambiaodos" style="text-align: end;">
+          <a class="cambiar-datos" (click)="editarUsuario(user.id, user.name, user.nameUser, user.email, user.phone)">Cambiar datos de usuario</a>
+        </div>        
+      </div>
+
+      <div style="padding-bottom: 9px; padding-top: 20px ;border-bottom: 1px solid rgb(139, 139, 139); width: 100%; display:flex">
+        <div class="datosUsarioCambiaodos">
+          Recuperacion de contraseña
+        </div>
+        <div class="datosUsarioCambiaodos" style="text-align: end;">
+          <a class="cambiar-datos" (click)="questionSecret(user.id)">Pregunta secreta</a>
+        </div>        
+      </div>
+
+      <div style="padding-bottom: 9px; padding-top: 20px ;border-bottom: 1px solid rgb(139, 139, 139); width: 100%; display:flex">
+        <div class="datosUsarioCambiaodos">
+          Contraseña
+        </div>
+        <div class="datosUsarioCambiaodos" style="text-align: end;">
+          <a class="cambiar-datos" (click)="changePassword(user.id)">Cambiar contraseña</a>
+        </div>        
+      </div>
+      
+      
+    </div>
+   
+    <div style="padding-right: 30px; padding-left: 30px;" id="data-user-cursos">
+      <h1 style=" padding-bottom: 20px;">Crear Cursos</h1>
+      <div class="infoclassCrear" >
+        <div class="datosUsarioCambiaodos">
+          <p>{{mensajeCursosCreacion.message}}</p>
+        </div>
+        <div class="datosUsarioCambiaodos" id="quieroCrearCurso" style="text-align: end;">
+          <a>Quiero ser creador</a>
+        </div>
+        <div class="datosUsarioCambiaodos" id="crearCursos" style="text-align: end;">
+          <a (click)="newCurso(user.id)">Crear Curso</a>
+        </div>      
+      </div>
+      <div class="container-cursos">
+        <div class="cursos" *ngFor="let item of cursosForIdUser">
+          <div style="max-width: 100%; height: 200px; overflow: hidden; border-radius: 5%; ">
+                  <img src="http://127.0.0.1:8000/img/imgVistaRecursos/{{item.vistaprevia}}" alt="" style="width: 100%; height: 100%;">
+          </div>
+          <div class="cursos-datos">
+                  <div class="datosCursoUno">
+                          <h3>{{item.name}}</h3>                          
+                          <p class="tipoPagaGratis"><b>{{item.descripcionEstado}}</b></p>
+                  </div>                                
+                  <div class="datosCursoUno" style="text-align: center;">
+                          <Button class="BotonVerCurso" (click)="editarCurso(item.id)"> <b>Editar cursos</b></Button>
+                  </div>                                
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:30px">
+        <button class="btn btn-outline-primary"  (click)="cambiarPagina(currentPage - 1)" [disabled]="currentPage === 1"><i class="bi bi-arrow-left-circle-fill"></i> anterior</button>
+            <button class="btn btn-outline-primary"  (click)="cambiarPagina(currentPage + 1)">Siguiente<i class="bi bi-arrow-right-circle-fill"></i></button>
+      </div>
+    </div>
+
+    <div style="padding-right: 30px; padding-left: 30px;" id="data-user-CrearCursos">
+      <h1 style=" padding-bottom: 20px;">Mis Cursos</h1>
+      <div style="padding-bottom: 9px; border-bottom: 1px solid rgb(139, 139, 139); width: 100%; display:flex">
+        <div class="datosUsarioCambiaodos">
+          Aqui apareceran los cursos que hayas comprado
+        </div>        
+      </div>
+      <div class="container-cursos">
+        <div class="cursos" *ngFor="let item of cursosCOmpraos">
+          <div style="max-width: 100%; height: 200px; overflow: hidden; border-radius: 5%; ">
+                  <img src="http://127.0.0.1:8000/img/imgVistaRecursos/{{item.vistaprevia}}" alt="" style="width: 100%; height: 100%;">
+          </div>
+          <div class="cursos-datos">
+                  <div class="datosCursoUno">
+                          <h3>{{item.name}}</h3>
+                          <!--<p>De: Reallinks</p>
+                          <p class="tipoPagaGratis"><b>{{item.tipo}} : ${{item.precio}}MX</b></p>-->
+                  </div>                                
+                  <div class="datosCursoUno" style="text-align: center;">
+                          <Button class="BotonVerCurso" (click)="editarCurso(item.id)"> <b>Ver mi cursos</b></Button>
+                  </div>                                
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+   
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,24 @@
+.imput-search{
+  border: none;
+  background: none;
+  outline: none;    
+}
+
+.button-search{
+  border: none;
+  background: none;
+  outline: none;
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+#busquedas:hover{
+  background-color: rgb(194, 194, 194) ;
+}
+
+@media only screen and (max-width: 1000px) {
+  #navbar{
+      display: none;
+  }
+ 
+}

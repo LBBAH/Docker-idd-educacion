@@ -1,0 +1,28 @@
+.imgImput{
+    display:none
+}
+
+.labelimgUser{
+    width: 100%;
+    height: 270px;
+    border-radius: 7px;
+    border:1px dashed #999
+}
+
+.labelimgUser:hover{
+    color: blueviolet;
+    border:1px dashed #0400e6
+}
+
+.buttonImgUser{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+
+}

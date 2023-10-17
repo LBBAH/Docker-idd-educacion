@@ -1,0 +1,5 @@
+<form [formGroup]="formNewimg" enctype="multipart/form-data">
+	<input class="imgImput" type="file" formControlName="file" id="file" (change)="imagenUp($event)" accept=".png"/>
+    <label class="labelimgUser" for="file">Cargar imagen.png</label>
+    <button class="buttonImgUser" (click)="imagensXD()">Cambiar foto</button>
+</form>

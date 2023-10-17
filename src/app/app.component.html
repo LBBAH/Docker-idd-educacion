@@ -1,0 +1,101 @@
+<nav id="navbar" >
+        <div class="col navbarDiv">
+                <img src="../assets/img/logoNavbar.png" alt="" style="width: 20px;">            
+        </div>
+        <div class="col text-center navbarDiv">
+                <button class="returnHome">
+                          Pagina de inicio
+                </button>                
+        </div>
+        <div class="col text-end navbarDiv" *ngIf="RegisterLogin">
+                <a [routerLink]="['/quienesSomos']" class="text-dark links">Quienes Somos</a>
+                |
+                <a [routerLink]="['/login']" class="text-dark links"  >Login</a>    
+                |
+                <a [routerLink]="['/singIn']" class="text-dark links" >Sing-In</a>            
+        </div>
+        <div class="col text-end navbarDiv" *ngIf="dataUser">
+                <a [routerLink]="['/quienesSomos']" class="text-dark links">Quienes Somos</a>
+                |
+                <a (click)="perfilUser(user.id)" class="text-dark links" >{{user.nameUser}}</a>
+                |
+                <a (click)="logout()" class="text-dark links" >LogOut</a>        
+        </div>
+</nav>
+
+<div class="navbar-menu" style="background-color: #ffffff; position: sticky;">
+        <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a [routerLink]="['/home']" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <img src="../assets/img/logotipo2.png" width="140">
+          
+                </a>
+    
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li><a [routerLink]="['/home']" class="nav-link px-2 text-secondary">Inicio</a></li>                            
+                        <li><a [routerLink]="['/contactUs']" class="nav-link px-2 text-secondary">Contacto</a></li>
+                        <li><a [routerLink]="['/recursos']" class="nav-link px-2 text-secondary">Recursos</a></li>
+                        <li><a [routerLink]="['/chat']" class="nav-link px-2 text-secondary">chat</a></li>
+                        <li><a [routerLink]="['/donacion']" class="nav-link px-2 text-secondary">Donaciones</a></li>      
+                </ul>
+
+                <div class="col-md-3 text-start">
+                        <app-search></app-search>
+                </div>                  
+        </header>
+</div>
+
+<div id="navbar-Responsive" style="z-index: 200;">
+        <div [style.background-image]="'url(' + (imagenesPerfil.background_user === '' ? 'https://educacionespecialmx.site/imgAppWeb/1325372.png' : 'https://educacionespecialmx.site/idd_Educatio_back/public_html/img/imgBackGroundUser/' + imagenesPerfil.background_user) + ')'" style="max-width: 150%; ; height: 200px ;" (click)="closePlease()" *ngIf="perfilimagenesUsuario">
+                <div>
+                        <img style="margin: 10px; text-align: end; width: 30px;" src="https://educacionespecialmx.site/imgAppWeb/icons8-atrás-52.png" alt="" >
+                </div>
+                <div style="justify-content: center;
+                align-items: center; padding: 10px;">
+                        <div>
+                                <img style="width: 90px; height: 90px;border-radius: 50%; padding-bottom: 6px;" [src]="imagenesPerfil.perfil_user == ''? 'https://educacionespecialmx.site/imgAppWeb/userimage.png' : 'https://educacionespecialmx.site/idd_Educatio_back/public_html/img/imgUser/' + imagenesPerfil.perfil_user" alt="">
+                                <p style="color: #ffffff;" *ngIf="RegisterLogin"> <b>Sin sesion Iniciada</b></p>
+                                <p style="color: #ffffff;" *ngIf="dataUser" (click)="perfilUser(user.id)"><b>{{user.nameUser}}</b></p>
+                        </div>
+                </div>
+        </div>
+        <div style="max-width: 150%; ; height: 200px ;background-image: url('https://educacionespecialmx.site/imgAppWeb/istockphoto-1130522927-612x612.jpg'); " (click)="closePlease()" *ngIf="perfilSinimagenesUsuario">
+                <div>
+                        <img style="margin: 10px; text-align: end; width: 30px;" src="https://educacionespecialmx.site/imgAppWeb/icons8-atrás-52.png" alt="" >
+                </div>
+                <div style="justify-content: center;
+                align-items: center; padding: 10px;">
+                        <div>
+                                <img style="width: 90px; height: 90px; border-radius: 50%; padding-bottom: 6px;" src="https://educacionespecialmx.site/imgAppWeb/userimage.png" alt="">
+                                <p style="color: #ffffff;" *ngIf="RegisterLogin"> <b>Sin sesion Iniciada</b></p>
+                                <p style="color: #ffffff;" *ngIf="dataUser" (click)="perfilUser(user.id)"><b>{{user.nameUser}}</b></p>
+                        </div>
+                </div>
+        </div>
+        <div id="navbar-Responsive-menu" style="padding: 4px;">                
+                <ul style="list-style: none; text-decoration: none;max-width: 100%; font-size: 15px;">
+                    <a [routerLink]="['/home']"><li>Inicio</li></a>
+                    <a [routerLink]="['/contactUs']"><li >Contactanos</li></a>
+                    <a [routerLink]="['/recursos']"><li >Recursos</li></a>
+                    <a [routerLink]="['/quienesSomos']"><li>Quienes Somos</li></a>               
+                    <a [routerLink]="['/donacion']"><li>Donaciones</li></a>               
+                    <a [routerLink]="['/login']" *ngIf="RegisterLogin"><li>Inicio de sesion</li></a>    
+                    <a [routerLink]="['/singIn']" *ngIf="RegisterLogin"><li>Registro</li></a>    
+                    <a *ngIf="dataUser" (click)="logout()"><li>Cerrar Sesion</li></a>    
+                </ul>
+        </div>        
+</div>
+
+<div style="display: flex; justify-content: space-between; justify-content: center; align-items: center;">
+        <div style="max-width: 20%; flex: 1;" class="menu-icon" >
+                <img style="width: 25px;" src="https://brayanahernandez.000webhostapp.com/img/icons8-menú-48.png" alt="" (click)="openPlease()">
+        </div>    
+        <div id="searchResponse"class="col-md-3 text-start" style=" max-width: 80%; flex: 1; z-index: 100;">
+                <app-search></app-search>
+        </div> 
+</div>
+
+<router-outlet></router-outlet>
+  
+<app-sticky-message></app-sticky-message>
+<app-scroll-to-top></app-scroll-to-top>
+

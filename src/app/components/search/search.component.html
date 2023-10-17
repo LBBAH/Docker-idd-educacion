@@ -1,0 +1,37 @@
+<!--<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Buscar Recurso</mat-label>
+    <input type="text"
+           placeholder="Por nombre"
+           aria-label="Buscar Banda"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="SelectBand($event.option.value)">
+      <mat-option *ngFor="let option of FinalData | async" [value]="option.name">
+        <p style="text-decoration: none" (click)="redirecRecursos(option.id)">{{ option.name }}</p>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>-->
+
+<form class="d-flex" role="search" style=" background-color: rgb(243, 243, 243); padding: 5px; border-radius: 20px; width: 250px;" >
+  <button type="submit" class="button-search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+    </svg>
+    </button>                        
+    <input type="search" (input)="buscar(name.value)" #name placeholder="buscar..." aria-label="Search" style="border: none; padding: 5px; width: 100%;" class="imput-search">    
+</form>
+<div style="position: absolute; background-color: white ;">
+  <ul>    
+    <li id = "busquedas"
+    style="list-style: none;
+    margin: 0;
+    padding-bottom: 10px;    
+    " *ngFor="let resultado of resultados" (click)="cursoId(resultado.id, resultado.name)">{{ resultado.name }}</li>
+  </ul>
+</div>
+
+
+  

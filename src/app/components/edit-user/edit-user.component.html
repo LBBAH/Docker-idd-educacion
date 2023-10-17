@@ -1,0 +1,45 @@
+<form class="p-3" [formGroup]="formEditUser" >
+  <div class="form-floating">
+    <input type="text" formControlName="name" class="form-control" placeholder="Email">
+    <label for="floatingInput">Nombre</label>
+  </div>
+  <div *ngIf=" name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+    <div *ngIf="name?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="name?.errors?.['maxlength']">Tamaño maximo revasado</div>
+    <div *ngIf="name?.errors?.['pattern']">No introducir caracteres especiales</div>
+  </div>
+
+  <div class="form-floating">
+    <input type="text" formControlName="nameUser" class="form-control" placeholder="Email">
+    <label for="floatingInput">Nombre de usuario</label>
+  </div>   
+  <div *ngIf="nameUser?.invalid && (nameUser?.dirty || nameUser?.touched )" class="alert alert-danger">
+    <div *ngIf="nameUser?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="nameUser?.errors?.['maxlength']">Tamaño maximo 15 caracteres</div>
+    <div *ngIf="nameUser?.errors?.['pattern']">No introducir caracteres especiales ni espacios</div>
+  </div>
+
+  <div class="form-floating">
+    <input type="phone" formControlName="phone" class="form-control" placeholder="Email">
+    <label for="floatingInput">Telefono</label>
+  </div>   
+  <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched )" class="alert alert-danger">
+    <div *ngIf="phone?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="phone?.errors?.['maxlength']">Tamaño maximo de 10 caracteres</div>
+    <div *ngIf="phone?.errors?.['pattern']">Solo Numeros</div>
+  </div>
+    
+  <div class="form-floating">
+    <input type="text" formControlName="email" class="form-control" placeholder="Email">
+    <label for="floatingInput">Correo</label>
+  </div>   
+  <div *ngIf="email?.invalid && (email?.dirty || email?.touched )" class="alert alert-danger">
+    <div *ngIf="email?.errors?.['required']">Campo requerido</div>
+    <div *ngIf="email?.errors?.['pattern']">Error sitaxis</div>
+    <div *ngIf="email?.errors?.['maxlength']">Error sitaxis</div>
+  </div>
+  <div>
+    <button class="btn btn-danger" (click)="closeDialog()">Cerrar</button>
+    <button  class="btn btn-info" (click)="UpdateUserz()" >Actualizar</button>
+  </div>   
+</form>

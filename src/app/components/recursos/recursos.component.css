@@ -1,0 +1,125 @@
+.container-cursos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    box-shadow: silver;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+    
+  .cursos {  
+    height: 390px;
+    padding: 15px;  
+    
+  }
+  
+  .cursos-datos h3{
+    margin: 10px;
+    font-size: 25px;
+    color: rgb(99, 99, 99);
+  }
+  
+  .cursos-datos p{
+    margin: 3px;
+    font-size: 17px;
+  }
+  
+  .tipoPagaGratis{
+    color: rgb(20, 24, 230);
+  }
+  
+  
+  .cursos-datos {
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Divide el contenedor en dos filas de igual altura */
+    height: 55%;
+  }
+  
+  
+  
+  .BotonVerCurso{
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      background-color:rgb(175, 65, 226); /* Green */    
+      color: rgb(255, 255, 255);
+      padding: 15px 32px;
+      text-align: center;        
+      font-size: 16px;
+      width: 80%;
+  }
+  
+
+@media only screen and (max-width: 991px)
+{
+.bbb_deals{
+    width: 100%;margin-right: 0px}
+}
+@media only screen and (max-width: 575px){
+    .bbb_deals{
+        padding-left: 15px;padding-right: 15px
+    }
+    .bbb_deals_title{
+        left: 15px;font-size: 16px
+    }
+    .bbb_deals_slider_nav_container{
+        right: 5px
+    }
+    .bbb_deals_item_name, .bbb_deals_item_price{
+        font-size: 20px
+    }
+}
+
+
+
+@media only screen and (max-width: 1300px) {
+
+    .container-cursos {
+      grid-template-columns: repeat(3, 1fr);    
+    }
+    .infoOne{
+      display: block;    
+    }
+  
+    .infoOne-me{
+      text-align: center;
+      margin: 40px;    
+    }
+    .infoOne-me img{
+      width: 100%;    
+    }
+    .cursos {  
+      margin-top: 40px;    
+    }
+  }
+  
+  
+  @media only screen and (max-width: 1000px) {
+  
+    .container-cursos {
+      grid-template-columns: repeat(2, 1fr);    
+    }
+  
+    .container-box {    
+      grid-template-columns: repeat(2, 1fr);    
+    }
+  
+  }
+  
+  
+  
+  @media only screen and (max-width: 500px) {
+  
+    .container-cursos {
+      grid-template-columns: repeat(1, 1fr);    
+    }
+  }
+  
+  
+  @media only screen and (max-width: 500px) {
+  
+    .container-box {    
+      grid-template-columns: repeat(1, 1fr);    
+    }
+  }

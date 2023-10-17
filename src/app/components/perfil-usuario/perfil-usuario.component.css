@@ -1,0 +1,249 @@
+#sectionInfoUser{
+  width: 100%; display:flex; padding-top: 30px;
+}
+
+.lista-opcionesUsuario{
+    padding: 20px;
+    color: rgb(128, 128, 128);
+    font-size: 20px;
+}
+
+.lista-opcionesUsuario:hover{
+    color: rgb(125, 21, 223);
+    border-bottom: 2px solid rgb(125, 21, 223);
+}
+
+.datosUsuario{
+    padding: 30px;
+    display: block;
+    width: 80%;
+}
+
+.datosUsarioCambiaodos{
+    width: 50%;
+}
+
+
+#data-user-cursos, #data-user-CrearCursos{
+    display: none;
+}
+
+.cambiar-datos{
+    text-decoration: none;
+    color: blue;
+}
+
+
+.container-cursos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    box-shadow: silver;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+    
+.cursos {  
+    height: 390px;
+    padding: 15px;  
+    margin-bottom: 30px;
+    
+}
+  
+.cursos-datos h3{
+    margin: 10px;
+    font-size: 20px;
+    color: rgb(99, 99, 99);
+}
+  
+.cursos-datos p{
+    margin: 3px;
+    font-size: 17px;
+}
+  
+.tipoPagaGratis{
+    color: rgb(20, 24, 230);
+}
+  
+  
+.cursos-datos {
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Divide el contenedor en dos filas de igual altura */
+    height: 55%;
+}
+  
+  
+  
+.BotonVerCurso{
+      text-decoration: none;
+      border: none;
+      border-radius: 10px;
+      background-color:rgb(175, 65, 226); /* Green */    
+      color: rgb(255, 255, 255);
+      padding: 15px 32px;
+      text-align: center;        
+      font-size: 16px;
+      width: 80%;
+}
+  
+#optionsFullscren{
+  width: 20%; align-content: center; display: flex; padding-top: 30px;
+}
+
+#optionsResponsiveScreen{
+  display:none;
+  align-items: center;  
+  text-align: center;
+}
+
+.infoclassCrear{
+  padding-bottom: 9px; 
+  border-bottom: 1px solid rgb(139, 139, 139); 
+  width: 100%; 
+  display:flex
+}
+
+.backgroundIMGuser{
+  max-width: 100%; height: 300px; background-size: cover;display: flex; justify-content: center; align-items: center; text-align: center;
+}
+
+.imgPerfil{
+  width: 150px; height: 150px; margin-left: 100px; margin-top: 20px; margin-bottom: 20px; border-radius: 50%;
+}
+
+.NobackgroundIMGuser{
+  max-width: 100%; height: 300px;background-image: url('https://educacionespecialmx.site/imgAppWeb/1325372.png') ;background-size: cover;display: flex; justify-content: center; align-items: center; text-align: center;
+}
+.NoimgPerfil{
+  width: 150px; height: 150px; margin-top: 20px; margin-bottom: 20px; border-radius: 50%;
+}
+
+.namePerfil{
+  width: 50%; color: #f8f9fa; font-size: 30px;
+}
+
+#data-user-changue{
+  padding-right: 30px; padding-left: 30px;
+}
+@media only screen and (max-width: 991px){
+  .bbb_deals{
+    width: 100%;margin-right: 0px
+  }
+  .container-cursos{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .cursos {  
+    padding:0px;
+    margin:2px
+  }
+  .namePerfil{
+    font-size: 16px;
+  }
+  .NoimgPerfil, .imgPerfil{
+    margin-left: 10px;
+    width: 100px;
+    height: 100px; 
+  }
+
+  .backgroundIMGuser, .NobackgroundIMGuser{
+    height:140px
+  }
+  
+
+  #optionsResponsiveScreen{
+    font-size: 12px;
+  }
+  #data-user-changue{
+    font-size: 16px;
+  }
+
+}
+@media only screen and (max-width: 575px){
+    .bbb_deals{
+        padding-left: 15px;padding-right: 15px
+    }
+    .bbb_deals_title{
+        left: 15px;font-size: 16px
+    }
+    .bbb_deals_slider_nav_container{
+        right: 5px
+    }
+    .bbb_deals_item_name, .bbb_deals_item_price{
+        font-size: 20px
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .container-cursos {
+      grid-template-columns: repeat(3, 1fr);    
+    }
+    .infoOne{
+      display: block;    
+    }
+  
+    .infoOne-me{
+      text-align: center;
+      margin: 40px;    
+    }
+    .infoOne-me img{
+      width: 100%;    
+    }
+    .cursos {  
+      margin-top: 40px;    
+    }
+  }
+    
+  @media only screen and (max-width: 1000px) {
+  
+    .container-cursos {
+      grid-template-columns: repeat(2, 1fr);    
+    }
+  
+    .container-box {    
+      grid-template-columns: repeat(2, 1fr);    
+    }
+    .datosUsarioCambiaodos{
+      width: 100%;
+    }
+    .infoclassCrear{
+      display:block
+    }
+  
+  }
+    
+  @media only screen and (max-width: 500px) {
+  
+    .container-cursos {
+      grid-template-columns: repeat(1, 1fr);    
+    }
+  }
+  
+  
+  @media only screen and (max-width: 500px) {
+  
+    .container-box {    
+      grid-template-columns: repeat(1, 1fr);    
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+  
+    #sectionInfoUser{
+      display:block;
+    }
+
+    #optionsFullscren{
+      display:none
+    }
+    
+    #optionsResponsiveScreen{
+      display:block
+    }    
+
+    .datosUsuario{    
+      width: 100%;
+  }
+  }

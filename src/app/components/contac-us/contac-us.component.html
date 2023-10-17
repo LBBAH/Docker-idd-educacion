@@ -1,0 +1,96 @@
+<header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <nav class="d-flex">
+          <h6 class="mb-0">
+            <a href="" class="text-reset">Home</a>
+            <span>/</span>
+            <a href="" class="text-reset">Contacto</a>           
+          </h6>
+        </nav>
+      </a>
+      <!--<app-search></app-search>-->
+    </div>
+</header>
+
+<div class="rounded d-flex justify-content-center" style="padding-top: 10px;">
+    <div class="col-md-7 col-sm-12 p-5 border">
+        <div class="text-center">
+            <h3 class="text-primary">Contactanos</h3>
+        </div>
+        <div class="p-8">
+            <form [formGroup]="formContact" (ngSubmit)="sendMessage()">
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary">
+                        <i class="bi bi-person-square text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="text" formControlName="name" class="form-control" placeholder="Nombre">
+                        <label for="floatingInput">Nombre</label>
+                    </div>                    
+                </div>
+                <div *ngIf="name?.invalid && (name?.dirty || name?.touched )" class="alert alert-danger">
+                    <div *ngIf="name?.errors?.['required']">Campo requerido</div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary">
+                        <i class="bi bi-envelope-fill text-white"></i>                        
+                    </span>
+                    <div class="form-floating">
+                        <input type="text" formControlName="email" class="form-control" placeholder="Email">
+                        <label for="floatingInput">Email</label>
+                    </div>                    
+                </div>  
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched )" class="alert alert-danger">
+                    <div *ngIf="email?.errors?.['required']">Campo requerido</div>
+                    <div *ngIf="email?.errors?.['pattern']">Error sitaxis</div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary">
+                        <i class="bi bi-telephone-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="number" formControlName="phone" class="form-control" placeholder="Telefono">
+                        <label for="floatingInput">Telefono</label>
+                    </div>                    
+                </div>
+                <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched )" class="alert alert-danger">
+                    <div *ngIf="phone?.errors?.['required']">Campo requerido</div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary">
+                        <i class="bi bi-question-lg text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="text" formControlName="affair" class="form-control" placeholder="Asunto">
+                        <label for="floatingInput">Asunto</label>
+                    </div>                    
+                </div>
+                <div *ngIf="affair?.invalid && (affair?.dirty || affair?.touched )" class="alert alert-danger">
+                    <div *ngIf="affair?.errors?.['required']">Campo requerido</div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary">
+                        <i class="bi bi-pencil-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <textarea formControlName="message" cols="20" rows="6" class="form-control"
+                        placeholder="Escriba su mensaje"></textarea>
+                        <label for="floatingInput">Escriba su mensaje</label>
+                    </div>                    
+                </div>
+                <div *ngIf="message?.invalid && (message?.dirty || message?.touched )" class="alert alert-danger">
+                    <div *ngIf="message?.errors?.['required']">Campo requerido</div>                    
+                </div>
+                <div class="d-grid col-6 mx-auto">
+                    <button class="btn btn-primary" type="submint"><span></span> Sign up</button>
+                </div>
+                <p class="text-center mt-3">Aun no tienes cuenta <a href="usuers-create">Registrate</a>                    
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer data-aos="flip-right"></app-footer>

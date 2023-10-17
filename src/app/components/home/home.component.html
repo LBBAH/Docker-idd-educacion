@@ -1,0 +1,170 @@
+<div id="carouselExampleDark" class="carousel carousel-dark slide carrusel w-100">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="../assets/img/1Diseño sin título (1).png"  class="d-block w-100" alt="..." >
+            <div class="carousel-caption d-none d-md-block">
+              
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="../assets/img/2Idd Educación (2).png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/img/3Diseño carrusel.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+</div>
+<article>
+        <section style="text-align: center; padding-bottom: 10px;">
+                <h1 class="titels" style="padding: 30px 0 0 0; font-family: 'Staatliches', cursive; font-size: 50px;">IDD EDUCATION</h1>
+                <p class="texto-inicio" >
+                        Sitio web para el desarrollo de habilidades en niños con discapacidad enfocada en la enseñanza y aprendizaje
+                </p>
+                <div class="container-fluid">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/1.png" alt="">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/2.png" alt="">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/3.png" alt="">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/4.png" alt="">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/5.png" alt="">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/6.png" alt="">
+                        <img style="width:80px; height:80px; margin: 20px;"  src="./assets/img/asociasiones/7.png" alt="">
+                </div>                
+        </section>       
+        <section style="text-align: center; padding-bottom: 10px;">
+                <h1 style="font-family: 'Staatliches', cursive;">Nuestros cursos y contenidos</h1>
+                <div class="container-box">
+                        <div class="box">
+                                <img src="./assets/img/discapacidad.png" alt="" style="width: 100px; border-radius: 50%;">                                
+                                <h1>Objetivo</h1>
+                                <p>El objetivo de estos cursos es brindar la informacion y habilidades  necesarias para ayudar a los niños con discapacidades, como enfrentar las barreras superandolas y desarrolando tecnicas para conectar con ellos</p>
+                        </div>
+                        <div class="box">
+                                <img src="./assets/img/sadc/children_with_disabilities_learning-9b9c6266-fb91-40ab-82f1-f951b9cb32f4.jpg" alt="" style="width: 100px; border-radius: 50%;">                                
+                                <h1>Contenido</h1>
+                                <p>Los cursos estan diseñados para cumplir un amplio rango de temas, desde como interactuan los niños con tacticas de trabajo de padres y terapeutas</p>
+                        </div>
+                        <div class="box">
+                                <img src="./assets/img/OSOXD.png" alt="" style="width: 100px; border-radius: 50%;">                                
+                                <h1>Estructura</h1>
+                                <p>Los cursos se dividen en temas compuestos por videos con ejercicios practicos</p>
+                        </div>
+                </div>
+
+        </section>     
+        <section>
+                <div class="infoOne">
+                        <div class="infoOne-me">
+                                <img src="./assets/img/discapacidad_intelectual.jpg" alt="">
+                        </div>
+                        <div class="infoOne-me">
+                                <div>
+                                        <h2 style="font-family: 'Staatliches', cursive;">Registrate Ahora</h2>
+                                <p>Estos cursos es una oportunidad única para aprender habilidades valiosas y hacer una diferencia en las vidas de niños con discapacidades. ¡Regístrate hoy!
+                                </p>
+                                </div>                        
+                        </div>
+                </div>
+        </section>
+        <section>
+                 <div style="display: block; width: 100%;">
+                        <h2 class="text-center">Porque Buscaste {{titulo}}</h2><br>  
+                </div>
+                <div class="container-cursos">
+                       
+                        <div class="cursos" *ngFor="let item of recurso">
+                                <div style="max-width: 100%; height: 200px; overflow: hidden; border-radius: 5%; ">
+                                        <img src="http://127.0.0.1:8000///img/imgVistaRecursos/{{item.vistaprevia}}" alt="" style="width: 100%; height: 100%;">
+                                </div>
+                                <div class="cursos-datos">
+                                        <div class="datosCursoUno">
+                                                <h3>{{item.name}}</h3>
+                                                <p>De: Reallinks</p>
+                                                <p class="tipoPagaGratis"><b>{{item.tipo}} : ${{item.precio}}MX</b></p>
+                                        </div>                                
+                                        <div class="datosCursoUno" style="text-align: center;">
+                                                <Button class="BotonVerCurso" (click)="verCursosIdVer(item.id, item.name)"> <b>Ver curso</b></Button>
+                                        </div>                                
+                                </div>
+                        </div>
+                       
+                </div>
+        </section>     
+        <section *ngIf="recomendacionCompra">
+                <div class="container py-5">
+                <h2 class="text-center">Porque compraste {{titulosee}}</h2><br>  
+                <div class="row d-flex">
+
+
+                <div class="col-md-12 col-lg-3 mb-4 mb-lg-0" style="padding-bottom: 10px; border-radius: 50%;" data-aos="zoom-out-up" *ngFor="let item of recursoSee">
+                <div class="holi">
+                        <div class="card" style="border-radius: 15px; ">             
+                        <div style="position: relative; display: flex;">
+                        <img src="http://127.0.0.1:8000///img/imgVistaRecursos/{{item.vistaprevia}}" style="width: 100%; height:260px; border-radius: 15px;" />
+                        <div style="position: absolute; top:10px; right: 10px;">
+                                <button type="button" class="btn btn-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"></path>
+                                        </svg>
+                                </button>
+                        </div>  
+                        <div style="position: absolute; top:240px; left: 10px;">
+                                <div style="background-color: #ebebeb; padding: 5px 20px 5px  20px; border-radius: 7px; color: blue;">
+                                        {{item.tipo}}
+                                </div>
+                        </div>                                                      
+                        </div>                                                              
+                        <div class="d-flex justify-content-between" style="padding: 20px 0px 0px 20px">
+                        <h6> <b> {{item.name}}</b></h6>                                                             
+                        </div>                               
+                        <div style="padding: 0px 20px 0px 20px; font-size: 14px;">
+                        <p>{{item.description}}</p>       
+                        </div>
+                        <div class="card-body">          
+                        <!--<p id="descripcionCursos" style="display: none;">{{item.descripcion}}</p>-->
+                        <div class="d-flex ">
+                                <div style="display: flex;
+                                justify-content: center;
+                                " class=" justify-content-end">
+                                        <div style="color: #ff9d00; font-size: 20px; padding-right: 9px;">
+                                                <p><b>4.5</b></p>
+                                        </div>
+                                        <div>
+                                                <img src="./img/1495916690download-png-image-star-orange-color.png" alt="" style="width: 25px;">
+                                        </div>
+                                </div>
+                                <div style="padding-left: 100px;">
+                                        <div>
+                                                <button type="button" class="btn btn-primary" (click)="verCursosIdVer(item.id, item.name)">Cursos</button>
+                                        </div>
+                                </div>                                                
+                        </div>
+                        </div>        
+                        </div>
+                </div>        
+                </div>     
+                </div>
+                </div>
+                
+        </section>
+</article>
+
+<app-footer data-aos="flip-right"></app-footer>
